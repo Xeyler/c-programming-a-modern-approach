@@ -12,11 +12,10 @@ set check_mark {
 spawn [lindex $argv 0]
 expect {
     [string trimleft $check_mark "\n"] {
-        puts "Success"
         exit 0
     }
     default {
-        puts "Check mark was printed incorrectly!"
+        puts stderr "Check mark was printed incorrectly!"
         exit 1
     }
 }
